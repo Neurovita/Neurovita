@@ -1,0 +1,331 @@
+/*
+-----------------
+	CSS reset 
+-----------------
+*/
+	html, body, 
+	div,nav,
+	form, fieldset, input,
+	ul, ol, li, 
+	table, thead, tbody, tr, th, td, 
+	a{
+		margin:0;
+		padding:0;
+		-moz-box-sizing:    border-box;
+		-webkit-box-sizing: border-box;
+		box-sizing:        	border-box;
+	}
+
+	table{
+		display: table;
+		background: none;
+		min-width: 100%;
+		border-spacing: 0;
+		border-collapse: collapse;
+	}
+	
+	thead{display: table-header-group;}
+	
+	tbody{display: table-row-group;}
+	
+	tr{display: table-row;}
+	tr:nth-child(odd){background: #eee;}
+	
+	td{display: table-cell; padding: 0 0.5em;}
+	
+
+/*
+------------------
+	Typography
+------------------
+*/
+	body, input, fieldset{
+		font-family: helvetica, arial, sans-serif;
+		font-size: 1em;
+		line-height: 1.5em;
+		color: #555;
+	}
+	
+	h1{
+		margin: 2em 0 1em;
+		line-height: 3em;
+		text-transform: uppercase;
+		text-align: center;
+	}
+	
+	h2{
+		padding: 5em 0 1em;
+	}
+	
+	h1,h2{
+		color: #333;
+	}
+	
+	p{
+		margin: 0.75em 0;	
+	}
+	
+/*
+---------------------------
+	Dimensions & Layout
+---------------------------
+*/
+	.wrapper{
+		margin: 0 auto;
+		max-width: 1020px;
+		padding: 0 40px; 
+	}
+
+	@media only screen and (max-width: 480px) {	
+		.wrapper{
+			padding: 0 20px; 
+		}	
+	}
+
+	.cf{content: ""; display: table; clear: both;}
+	
+	@-ms-viewport{ width: device-width; }
+	@viewport	 { width: device-width; }
+	
+/*
+-------------------
+	Navigation
+-------------------
+*/
+	.navigation{
+		position: fixed;
+		top: 0;
+		width: 100%;
+		color: #fff;
+		height: 3em;
+		line-height: 3em;
+	}
+	
+	.navigation .wrapper{
+		position: relative;
+	}
+	
+	.navigation, .navLink{
+		background: #674380;
+	}
+	
+	.navigation li{
+		position: relative;
+		float: left;
+	}
+	
+	.navigation a{
+		display: block;
+		color: #fff;
+		font-size: 0.75em;
+		text-transform: uppercase;
+		text-decoration: none;
+		padding: 0 2em;
+	}
+
+	.emptyLi a:hover,
+	.emptyLi a:focus,
+	.emptyLi a:active,
+	.navigation a:hover, 
+	.navigation a:active,
+	.navigation a:focus{
+		background:#825aa6;
+	}
+
+	.navmenu{
+		list-style: none;
+		float: right;
+		margin-right: -1.5em;
+	}
+	
+	.logo{
+		float: left;
+		margin-left: -2em;
+		font-weight: bold;
+		text-decoration: none;
+	}
+	
+	.emptyLi{
+		width: 100%;
+		background: url('img/menu.png') no-repeat right 12px ;
+		height: 3em;
+		display: none;
+	}
+
+	@media only screen and (max-width: 960px) {			/* min-width of horizontal ul + logo*/
+		.navmenu{
+			width: 160px;
+			height: 3em;								/* height of li */
+			margin: 0;
+			overflow: hidden;
+			display: block;	
+		}
+		
+		.navmenu:hover, 
+		.navmenu:focus,
+		.navmenu:target
+		.navmenu:active{
+			margin-top: -3em;
+			width: 160px;
+			overflow: visible;
+		}
+		
+		.navmenu li{
+			width		: 100%;
+			clear		: both;
+		}
+		
+		.emptyLi{
+			display: block;
+		}
+		
+		.navmenu li:nth-last-child(1),
+		.navmenu a:nth-last-child(1){
+			border-radius: 0 0 5px 5px;
+		}
+	}
+/*
+-------------------
+	Intro
+-------------------
+*/	
+	.intro{
+		text-align: center;
+		margin: 7.5em 0 4.5em;
+	}
+	
+	.intro p{
+		font-style: italic;
+		font-family: georgia;
+	}
+	
+	@media only screen and (max-width: 640px) {
+		.intro{display: none;}
+	}
+
+
+/*
+-------------------
+	Storitve
+-------------------
+*/	
+	.amb{
+		padding: 5em 0 1em;
+		text-align: center;
+	}
+	
+	.amb p{
+		margin-bottom: 0;
+	}
+	
+	.amb h2{
+		padding: 0;
+		margin: 0 0 3em;
+	}
+	
+	.amb img{
+		padding: 0 0 3em;
+	}
+	
+	.nevroAmb, .kardioAmb{
+		float: left;
+		font-size: 16px;
+		width: 50%;
+		min-width: 270px;
+	}
+	
+	.nevroAmb{
+		padding: 0 20px 0 0;
+		border-right: 1px solid #eee;
+	}
+
+	.kardioAmb{
+		padding: 0 0 0 20px;
+		border-left: 1px solid #eee;
+	}
+	
+	@media only screen and (max-width: 640px) {
+		.amb{
+			padding: 5em 0 1em;
+		}
+		.nevroAmb, .kardioAmb{
+			border: none;
+		}
+		.nevroAmb, .kardioAmb{
+			width: 100%;
+		}
+		.kardioAmb{
+			padding: 9em 0 0;
+		}
+	}
+
+/*
+-------------------
+	Map
+-------------------
+*/		
+	.meta{ font-size: 10px; }
+	
+	.mapimg, .maptext{
+		vertical-align: text-top;
+		float: left;
+		width: 50%;
+		min-width: 270px;
+	}
+	
+	.mapimg img{ width: 100%; }
+	
+	.maptext{
+		padding-left: 40px;
+	}
+	
+	.map h2{ font-size: 24px; }
+	.map p {margin-top: 0;}
+	
+
+	@media only screen and (max-width: 640px) {
+		.maptext{padding: 0;}
+		.map p {margin-top: 1.5em;}
+		.mapimg, .maptext{
+			width: 100%;
+		}
+	}
+
+
+/*
+-------------------
+	Cenik
+-------------------
+*/	
+	.cenik{
+		margin: 2em 0 4em;
+		line-height: 3em
+	}
+	
+	.numberCell{ text-align: right; }
+
+
+
+/*
+-------------------
+	Footer
+-------------------
+*/	
+
+	html, body{min-height: 100%;}		/* Enable sticky footer */
+	html{position: relative;}			/* Enable sticky footer */
+	body{padding-bottom: 12em;}			/* Footer height + footer min-top-margin */
+	
+	footer{
+		width: 100%;					/* Enable sticky footer */
+		position: absolute;				/* Enable sticky footer */
+		bottom: 0;						/* Enable sticky footer */
+		background: #eee;
+		color: #aaa;
+		line-height: 4.8em;
+		font-size: 10px;
+	}
+	
+	footer a{ color: #aaa; }
+	
+	.copyRight{	float: right; }
